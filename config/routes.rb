@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :posts
+  root 'users#home'
+  match '/mail_send', to: 'users#mail_send', via: 'get'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

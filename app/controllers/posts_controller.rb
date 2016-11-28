@@ -69,6 +69,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def mail_send
+    @mail = NoticeMailer.sendmail_confirm.deliver
+    render :text => 'send finish'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
